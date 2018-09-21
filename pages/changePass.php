@@ -9,7 +9,7 @@
     require_once("connection.php");
     $std = $_GET['std'];
     if($std == 6)
-      $standard = 'manisha6';
+        $standard = 'manisha6';
     else if($std == 7)
         $standard = 'manisha7';
     else if($std == 8)
