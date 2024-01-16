@@ -31,7 +31,7 @@ session_start();
 										echo $_SESSION['pnameErr'];
 										unset($_SESSION['pnameErr']);
 										}?></span></br><p></p></br>
-			<input type="text" name="rname" id="ad" value placeholder="Recommended By"/></br><p></p></br>
+			<input type="text" name="rname" id="ad" value placeholder="Recommended/Referred By"/></br><p></p></br>
 			<h4>Contact Details:</h4><p></p>022-
 				<input type="text" id="add" name="res" value placeholder="Res" />
 						 +91-<input type="text" id="add1" name="mbl" value placeholder="Mobile"/><span class="error"> * <?php if( isset($_SESSION['mblErr']) ) {
@@ -42,7 +42,7 @@ session_start();
 			<input id="ad" type="text" name="year" value placeholder="Admission for year" /> <span class="error"> * <?php if( isset($_SESSION['yearErr']) ) {
 										echo $_SESSION['yearErr'];
 										unset($_SESSION['yearErr']);
-										}?></span><p>Eg: 2018-19</p></br><p></p></br>
+										}?></span><p>Eg: 2024-25</p></br><p></p></br>
 									<h4>Standard: <span class="error">*</h4>
 
 			<span class="error"> <?php if( isset($_SESSION['stdErr']) ) {

@@ -6,73 +6,64 @@ width:70%;
 
 }
 
-
-#pg6{
-
-display:none;
-
-border-radius:20px;
-
+#pg3 {
+	display:none;
+	border-radius:20px;
 }
 
-#pg7{
-
-display:none;
-
-border-radius:20px;
-
+#pg4 {
+	display:none;
+	border-radius:20px;
 }
 
-#pg8{
-
-display:none;
-
-border-radius:20px;
-
+#pg5 {
+	display:none;
+	border-radius:20px;
 }
 
-#pg9{
-
-display:none;
-
-border-radius:20px;
-
+#pg6 {
+	display:none;
+	border-radius:20px;
 }
 
-#pg10{
-
-display:none;
-
-border-radius:20px;
-
+#pg7 {
+	display:none;
+	border-radius:20px;
 }
 
-#pg11{
-
-display:none;
-
-border-radius:20px;
-
+#pg8 {
+	display:none;
+	border-radius:20px;
 }
 
-#pg12{
-
-display:none;
-
-border-radius:20px;
-
+#pg9 {
+	display:none;
+	border-radius:20px;
 }
 
+#pg10 {
+	display:none;
+	border-radius:20px;
+}
 
+#pg11 {
+	display:none;
+	border-radius:20px;
+}
 
-th
+#pg12 {
+	display:none;
+	border-radius:20px;
+}
 
-{
+#pg12HSC {
+	display:none;
+	border-radius:20px;
+}
 
-text-align:center;
-
-padding-bottom:20px;
-
+th {
+	text-align:center;
+	padding-bottom:20px;
 }
 
 
@@ -83,150 +74,119 @@ text-align:center;
 
 }
 
-
-
-#six
-
-{
-
+#three {
 	cursor:pointer;
-
 	background-color:#66ffff;
-
 	border-color:#e5ffff;
-
 	border-style:solid;
-
 	height:70px;
-
 	text-align:center;
-
 	margin-bottom:5px;
-
 }
 
-#seven
-
-{
-
+#four {
 	cursor:pointer;
-
 	background-color:#66ffff;
-
 	border-color:#e5ffff;
-
 	border-style:solid;
-
 	height:70px;
-
 	text-align:center;
-
 	margin-bottom:5px;
-
 }
 
-#eight
-
-{
-
+#five {
 	cursor:pointer;
-
 	background-color:#66ffff;
-
 	border-color:#e5ffff;
-
 	border-style:solid;
-
 	height:70px;
-
 	text-align:center;
-
 	margin-bottom:5px;
-
 }
 
-#nine
-
-{
-
+#six {
 	cursor:pointer;
-
 	background-color:#66ffff;
-
 	border-color:#e5ffff;
-
 	border-style:solid;
-
 	height:70px;
-
 	text-align:center;
-
-}
-
-#ten
-
-{
-
-	cursor:pointer;
-
-	background-color:#66ffff;
-
-	border-color:#e5ffff;
-
-	border-style:solid;
-
-	height:70px;
-
-	text-align:center;
-
-}
-
-#eleven
-
-{
-
-	cursor:pointer;
-
-	background-color:#66ffff;
-
-	border-color:#e5ffff;
-
-	border-style:solid;
-
-	height:70px;
-
-	text-align:center;
-
 	margin-bottom:5px;
-
 }
 
-#twelve
-
-{
-
+#seven {
 	cursor:pointer;
-
 	background-color:#66ffff;
-
 	border-color:#e5ffff;
-
 	border-style:solid;
-
 	height:70px;
-
 	text-align:center;
-
 	margin-bottom:5px;
-
 }
 
+#eight {
+	cursor:pointer;
+	background-color:#66ffff;
+	border-color:#e5ffff;
+	border-style:solid;
+	height:70px;
+	text-align:center;
+	margin-bottom:5px;
+}
+
+#nine {
+	cursor:pointer;
+	background-color:#66ffff;
+	border-color:#e5ffff;
+	border-style:solid;
+	height:70px;
+	text-align:center;
+	margin-bottom:5px;
+}
+
+#ten {
+	cursor:pointer;
+	background-color:#66ffff;
+	border-color:#e5ffff;
+	border-style:solid;
+	height:70px;
+	text-align:center;
+	margin-bottom:5px;
+}
+
+#eleven {
+	cursor:pointer;
+	background-color:#66ffff;
+	border-color:#e5ffff;
+	border-style:solid;
+	height:70px;
+	text-align:center;
+	margin-bottom:5px;
+}
+
+#twelve {
+	cursor:pointer;
+	background-color:#66ffff;
+	border-color:#e5ffff;
+	border-style:solid;
+	height:70px;
+	text-align:center;
+	margin-bottom:5px;
+}
+
+#hsc_twelve {
+	cursor:pointer;
+	background-color:#66ffff;
+	border-color:#e5ffff;
+	border-style:solid;
+	height:70px;
+	text-align:center;
+	margin-bottom:5px;
+}
 
 
 #dhano {
-
-width:300px;
-
+    width:300px;
 }
 
 

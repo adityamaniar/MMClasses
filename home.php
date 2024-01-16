@@ -48,21 +48,16 @@ session_start();
                 <ul class="clear">
                     <li class="active"><a href="index.php">Home</a></li>
                     <li><a onclick="kolo" id="toregister" href="#register1">Register</a></li>
-                    <li><a id="tocontactus" href="#contact_us">Contact Me At</a></li>
+                    <li><a id="tocontactus" href="#contact_us">Contact Me</a></li>
                 </ul>
             </nav>
         </header>
     </div>
 
     <div class="slider" id = "slider1">
-        <div style="background-image:url(images/class_pic.jpg)"></div>
-        <div style="background-image:url(images/pic1.jpeg)"></div>
-        <div style="background-image:url(images/pic2.jpeg)"></div>
-        <div style="background-image:url(images/pic3.jpeg)"></div>
-        <div style="background-image:url(images/pic4.jpeg)"></div>
-        <div style="background-image:url(images/pic5.jpeg)"></div>
-        <div style="background-image:url(images/pic6.jpeg)"></div>
-        <div style="background-image:url(images/pic8.jpeg)"></div>
+        <div style="background-image:url(images/topperList2023.jpeg)"></div>
+            <div style="background-image:url(images/toppers2023.jpeg)"></div>
+            <div style="background-image:url(images/GandhiSikshanBhavan.jpg)"></div>
 
         <i class="left" class="arrows" style="z-index:2; position:absolute;"><svg viewBox="0 0 100 100"><path d="M 10,50 L 60,100 L 70,90 L 30,50  L 70,10 L 60,0 Z"></path></svg></i>
         <i class="right" class="arrows" style="z-index:2; position:absolute;"><svg viewBox="0 0 100 100"><path d="M 10,50 L 60,100 L 70,90 L 30,50  L 70,10 L 60,0 Z" transform="translate(100, 100) rotate(180) "></path></svg></i>
@@ -107,27 +102,27 @@ session_start();
     </main>
 </div>
 
-<div class="wrapper bgded" style="background-image:url('images/3.jpg');">
-    <div class="hoc split clear">
-        <section>
-            <h2 class="heading">More About Me</h2>
-            <p class="btmspace-50"></p>
-            <article><a href="#"><i class="icon fa fa-odnoklassniki"></i></a>
-                <h6 class="heading font-x1">Love Children </h6>
-                <p>I have been in this profession for the past 8 years. My affection with children is unparalleled.</p>
-            </article>
-            <article><a href="#"><i class="icon fa fa-object-ungroup"></i></a>
-                <h6 class="heading font-x1">A 100% Dedication</h6>
-                <p>I believe the each student is equal and they all should receive equal commitment from my side.</p>
-            </article>
-            <article><a href="#"><i class="icon fa fa-signing"></i></a>
-                <h6 class="heading font-x1">Guaranteed Success</h6>
-                <p>Every year my children sail through the exams with flying colours. I believe in putting my heart and soul into my work
-                    which reflects in my childrens' results </p>
-            </article>
+    <div class="wrapper row6">
+      <div class="hoc container clear">
+        <section class="center btmspace-80">
+          <h2 class="heading">More About Me</h2>
+          <p class="btmspace-50"></p>
+          <a><i class="icon fa fa-odnoklassniki"></i></a>
+            <h6 class="heading font-x1">Love Children </h6>
+            <p>I have been in this profession for the past 8 years. My affection with children is unparalleled.</p>
+          
+          <a><i class="icon fa fa-object-ungroup"></i></a>
+            <h6 class="heading font-x1">A 100% Dedication</h6>
+            <p>I believe the each student is equal and they all should receive equal commitment from my side.</p>
+          
+          <a><i class="icon fa fa-signing"></i></a>
+            <h6 class="heading font-x1">Guaranteed Success</h6>
+            <p>Every year my children sail through the exams with flying colours. I believe in putting my heart and soul into my work
+              which reflects in my childrens' results </p>
+          
         </section>
+      </div>
     </div>
-</div>
 <div id="register1" class="wrapper row2">
     <article class="hoc container clear">
         <div class="one_quarter first">
@@ -143,7 +138,6 @@ session_start();
 <div class="wrapper coloured">
     <article class="hoc cta clear">
         <h6 class="three_quarter first">Your child's future is in good hands :)</h6>
-        <footer class="one_quarter"><div class="btn" id="yolo" onclick="change()">Click and smile</div></footer>
     </article>
 </div>
 
@@ -192,17 +186,9 @@ session_start();
 <script src="layout/scripts/jquery.backtotop.js"></script>
 <script src="layout/scripts/jquery.mobilemenu.js"></script>
 <script src="layout/scripts/jquery.flexslider-min.js"></script>
-<script>
-    function change()
-    {
-        if (document.getElementById("yolo").innerHTML=="Click and smile") document.getElementById("yolo").innerHTML = ":)";
-        else document.getElementById("yolo").innerHTML = "Click and smile";
-    }
-</script>
 <script src="layout/scripts/sliderResponsive.js"></script>
 <script>
     $(document).ready(function() {
-
         $("#slider1").sliderResponsive({
             // Using default everything
             // slidePause: 5000,
@@ -219,7 +205,7 @@ session_start();
 
     $(document).ready(function() {
         var id = Math.floor((Math.random() * 10000) + 1);
-        alert("You have successfull registered. Your registration ID is " + id + ".\n Registration does not confirm admission. You will be notified about the admission personally. God bless.");
+        alert("You have successfull registered. Your registration ID is " + id + ".\nRegistration does not confirm admission. You will be notified about the admission personally");
     });
 
 </script>

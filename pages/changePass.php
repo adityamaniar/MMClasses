@@ -8,8 +8,14 @@
 
     require_once("connection.php");
     $std = $_GET['std'];
-    if($std == 6)
-        $standard = 'manisha6';
+    if($std == 3)
+        $standard = 'manisha3';
+    else if($std == 4)
+        $standard = 'manisha4';
+    else if($std == 5)
+        $standard = 'manisha5';
+    else if($std == 6)
+      	$standard = 'manisha6';
     else if($std == 7)
         $standard = 'manisha7';
     else if($std == 8)
@@ -32,8 +38,8 @@
         <form action="changePassForm.php" method="post">
             <?php
                 $result = mysqli_query($conn,"SELECT password FROM member WHERE username = '$standard'");
-                $seventhLogin = mysqli_fetch_assoc($result);
-                $answer = $seventhLogin['password'];
+                $login = mysqli_fetch_assoc($result);
+                $answer = $login['password'];
             ?>
             Old password is: <?php echo "$answer"; ?><br>
             Enter New Password: <input type="text" name="NewPass"><br>

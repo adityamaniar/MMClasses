@@ -3,6 +3,13 @@
 @import url("custom.flexslider.css");
 @import url("framework.css");
 
+html, body {
+  overflow-x: hidden;
+}
+body {
+  position: relative
+}
+
 /* Rows
 --------------------------------------------------------------------------------------------------------------- */
 .row0, .row0 a{}
@@ -20,10 +27,10 @@
 	background-position: center center;
 	display: block;
 	width: 100%;
-	height: 100vh;
+	height: 70vh;
 	/* height: 100vh; *//* If you want fullscreen */
 	position: relative;
-	background-size: cover;
+	background-size: contain;
 	background-repeat: no-repeat;
 	background-color: #000;
 	overflow: hidden;

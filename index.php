@@ -32,7 +32,7 @@
                               echo '</li> <li style="font-size: 12px;"><a href="pages/logout.php">Logout</a></li>';
                             }
                             else {
-                              echo '<li style="font-size: 12px;"><a href="pages/login/login.php">Login</a></li>';
+                              echo '<li style="font-size: 12px;"><a href="pages/Login_v1/login.php">Login</a></li>';
                             }
                           ?>
                     </ul>
@@ -48,21 +48,16 @@
             <ul class="clear">
               <li class="active"><a href="index.php">Home</a></li>
               <li><a onclick="kolo" id="toregister" href="#register1">Register</a></li>
-              <li><a id="tocontactus" href="#contact_us">Contact Me At</a></li>
+              <li><a id="tocontactus" href="#contact_us">Contact Me</a></li>
             </ul>
           </nav>
         </header>
         </div>
 
         <div class="slider" id = "slider1">
-            <div style="background-image:url(images/class_pic.jpg)"></div>
-            <div style="background-image:url(images/pic1.jpeg)"></div>
-            <div style="background-image:url(images/pic2.jpeg)"></div>
-            <div style="background-image:url(images/pic3.jpeg)"></div>
-            <div style="background-image:url(images/pic4.jpeg)"></div>
-            <div style="background-image:url(images/pic5.jpeg)"></div>
-            <div style="background-image:url(images/pic6.jpeg)"></div>
-            <div style="background-image:url(images/pic8.jpeg)"></div>
+            <div style="background-image:url(images/topperList2023.jpeg)"></div>
+            <div style="background-image:url(images/toppers2023.jpeg)"></div>
+            <div style="background-image:url(images/GandhiSikshanBhavan.jpg)"></div>
 
             <i class="left" class="arrows" style="z-index:2; position:absolute;"><svg viewBox="0 0 100 100"><path d="M 10,50 L 60,100 L 70,90 L 30,50  L 70,10 L 60,0 Z"></path></svg></i>
             <i class="right" class="arrows" style="z-index:2; position:absolute;"><svg viewBox="0 0 100 100"><path d="M 10,50 L 60,100 L 70,90 L 30,50  L 70,10 L 60,0 Z" transform="translate(100, 100) rotate(180) "></path></svg></i>
@@ -75,29 +70,42 @@
         <div class="center btmspace-80">
           <h3 class="heading">Testimonials</h3>
         </div>
+        <span>
+            <div class="center btmspace-80">
+                <video width="400" controls>
+                    <source src="images/ForamTestimonial.mp4" type="video/mp4">
+                </video>
+                <br>
+                <p><strong>Foram Sanjanwala: 99 in English and 99.4% Overall in ICSE 2019</strong></p>
+            </div>
+            <div class="center btmspace-80">
+                <img src="images/shrushtiNandu.jpg">
+                <p><strong>Shrushti Nandu: ISC 2019 topper</strong></p>
+            </div>
+        </span>
         <ul class="nospace">
           <li class="one_quarter first">
-            <article><a class="inverse" href="#"><i class="btmspace-30 icon fa fa-expand"></i></a>
+            <article><a class="inverse"><i class="btmspace-30 icon fa fa-expand"></i></a>
               <h6 class="heading font-x1">Mrs. Rushangi</h6>
               <p> Thank you so much ..
                 Ma'am  for the support and help that you showered on our kids.They are really lucky to have a wonderful  teacher like you..</p>
             </article>
           </li>
           <li class="one_quarter">
-            <article><a class="inverse" href="#"><i class="btmspace-30 icon fa fa-headphones"></i></a>
+            <article><a class="inverse"><i class="btmspace-30 icon fa fa-headphones"></i></a>
               <h6 class="heading font-x1">Mrs. Madhavi Mehta</h6>
               <p>You've been so much more than a teacher for us. You've been our mentor, our support and our guide. Thank you for everything ...</p>
             </article>
           </li>
           <li class="one_quarter">
-            <article><a class="inverse" href="#"><i class="btmspace-30 icon fa fa-history"></i></a>
+            <article><a class="inverse"><i class="btmspace-30 icon fa fa-history"></i></a>
               <h6 class="heading font-x1">Mrs. Shweta Kabra</h6>
               <p>Thanx a lot miss. It was indeed our pleasure to send our children in such experienced hands </p>
             </article>
           </li>
         </ul>
         <li class="one_quarter">
-            <article><a class="inverse" href="#"><i class="btmspace-30 icon fa fa-headphones"></i></a>
+            <article><a class="inverse"><i class="btmspace-30 icon fa fa-headphones"></i></a>
               <h6 class="heading font-x1">Mrs. Shah</h6>
               <p>Miss today Aryan also said that his fear for exam went because of you.  Thank you so much for all the love and affection you bestowed on our kids. My big gratitude to you.</p>
             </article>
@@ -107,24 +115,24 @@
       </main>
     </div>
 
-    <div class="wrapper bgded" style="background-image:url('images/3.jpg');">
-      <div class="hoc split clear">
-        <section>
+    <div class="wrapper row6">
+      <div class="hoc container clear">
+        <section class="center btmspace-80">
           <h2 class="heading">More About Me</h2>
           <p class="btmspace-50"></p>
-          <article><a href="#"><i class="icon fa fa-odnoklassniki"></i></a>
+          <a><i class="icon fa fa-odnoklassniki"></i></a>
             <h6 class="heading font-x1">Love Children </h6>
             <p>I have been in this profession for the past 8 years. My affection with children is unparalleled.</p>
-          </article>
-          <article><a href="#"><i class="icon fa fa-object-ungroup"></i></a>
+          
+          <a><i class="icon fa fa-object-ungroup"></i></a>
             <h6 class="heading font-x1">A 100% Dedication</h6>
             <p>I believe the each student is equal and they all should receive equal commitment from my side.</p>
-          </article>
-          <article><a href="#"><i class="icon fa fa-signing"></i></a>
+          
+          <a><i class="icon fa fa-signing"></i></a>
             <h6 class="heading font-x1">Guaranteed Success</h6>
             <p>Every year my children sail through the exams with flying colours. I believe in putting my heart and soul into my work
               which reflects in my childrens' results </p>
-          </article>
+          
         </section>
       </div>
     </div>
@@ -134,7 +142,7 @@
       <h3 class="heading font-x2">You are a short way from registering your child</h3>
     </div>
     <div class="three_quarter">
-      <p class="nospace btmspace-30">Give Us Your Details And We will Get Back With You Soon Regarding The Admissions</p>
+      <p class="nospace btmspace-30">Give us your details and we will get back to you soon regarding the admissions</p>
       <div><a class="btn" href="pages/register.php">Register &raquo;</a></div>
     </div>
   </article>
@@ -142,8 +150,7 @@
 
 <div class="wrapper coloured">
   <article class="hoc cta clear"> 
-    <h6 class="three_quarter first">Your child's future is in good hands :)</h6>
-    <footer class="one_quarter"><div class="btn" id="yolo" onclick="change()">Click and smile</div></footer>
+    <h6>Your child's future is in great hands :)</h6>
   </article>
 </div>
 
@@ -192,13 +199,6 @@
 <script src="layout/scripts/jquery.backtotop.js"></script>
 <script src="layout/scripts/jquery.mobilemenu.js"></script>
 <script src="layout/scripts/jquery.flexslider-min.js"></script>
-<script>
-  function change()
-  {
-      if (document.getElementById("yolo").innerHTML=="Click and smile") document.getElementById("yolo").innerHTML = ":)";
-      else document.getElementById("yolo").innerHTML = "Click and smile";
-  }
-</script>
 <script src="layout/scripts/sliderResponsive.js"></script>
 <script>
     $(document).ready(function() {
@@ -215,5 +215,18 @@
             });
     });
 </script>
+<?php
+    if (isset($_SESSION['REGISTER_ID'])) {
+        echo '
+            <script>
+                $(document).ready(function() {
+                    var id = Math.floor((Math.random() * 10000) + 1);
+                    alert("You have successfull registered. Your registration ID is " + id + ".\nRegistration does not confirm admission. You will be notified about the admission personally");
+                });
+            </script>
+        ';
+    }
+    unset($_SESSION['REGISTER_ID']);
+?>
 </body>
 </html>

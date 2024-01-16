@@ -3,14 +3,31 @@
     require("connection.php");
     require("auth.php");
 
-    $sixaccess = $sevenaccess =$eightaccess = $nineaccess = $tenaccess = $elevenaccess = $twelveaccess = 0;
+    $threeaccess = $fouraccess = $fiveaccess = $sixaccess = $sevenaccess = $eightaccess 
+    = $nineaccess = $tenaccess = $elevenaccess = $twelveaccess = $hsc_twelveaccess = 0;
 
     if ($_SESSION['SESS_FIRST_NAME'] == 'manishamom' && $_SESSION['SESS_LAST_NAME'] == 'mom')
-        $sixaccess = $sevenaccess =$eightaccess = $nineaccess = $tenaccess = $elevenaccess = $twelveaccess = 1;
+        $threeaccess = $fouraccess = $fiveaccess = $sixaccess = $sevenaccess = $eightaccess 
+      = $nineaccess = $tenaccess = $elevenaccess = $twelveaccess = $hsc_twelveaccess = 1;
+
+    $result = mysqli_query($conn,"SELECT password FROM member WHERE username = 'manisha3'");
+    $thirdLogin = mysqli_fetch_assoc($result);
+    if ($_SESSION['SESS_FIRST_NAME'] == 'manisha3' && $_SESSION['SESS_LAST_NAME'] == $thirdLogin['password'])
+        $threeaccess = 1;
+
+    $result = mysqli_query($conn,"SELECT password FROM member WHERE username = 'manisha4'");
+    $fourthLogin = mysqli_fetch_assoc($result);
+    if ($_SESSION['SESS_FIRST_NAME'] == 'manisha4' && $_SESSION['SESS_LAST_NAME'] == $fourthLogin['password'])
+        $fouraccess = 1;
+
+    $result = mysqli_query($conn,"SELECT password FROM member WHERE username = 'manisha5'");
+    $fifthLogin = mysqli_fetch_assoc($result);
+    if ($_SESSION['SESS_FIRST_NAME'] == 'manisha5' && $_SESSION['SESS_LAST_NAME'] == $fifthLogin['password'])
+        $fiveaccess = 1;
 
     $result = mysqli_query($conn,"SELECT password FROM member WHERE username = 'manisha6'");
-    $seventhLogin = mysqli_fetch_assoc($result);
-    if ($_SESSION['SESS_FIRST_NAME'] == 'manisha6' && $_SESSION['SESS_LAST_NAME'] == $seventhLogin['password'])
+    $sixthLogin = mysqli_fetch_assoc($result);
+    if ($_SESSION['SESS_FIRST_NAME'] == 'manisha6' && $_SESSION['SESS_LAST_NAME'] == $sixthLogin['password'])
         $sixaccess = 1;
 
     $result = mysqli_query($conn,"SELECT password FROM member WHERE username = 'manisha7'");
@@ -19,29 +36,34 @@
         $sevenaccess = 1;
 
     $result = mysqli_query($conn,"SELECT password FROM member WHERE username = 'manisha8'");
-    $seventhLogin = mysqli_fetch_assoc($result);
-    if ($_SESSION['SESS_FIRST_NAME'] == 'manisha8' && $_SESSION['SESS_LAST_NAME'] == $seventhLogin['password'])
+    $eigthLogin = mysqli_fetch_assoc($result);
+    if ($_SESSION['SESS_FIRST_NAME'] == 'manisha8' && $_SESSION['SESS_LAST_NAME'] == $eigthLogin['password'])
         $eightaccess = 1;
 
     $result = mysqli_query($conn,"SELECT password FROM member WHERE username = 'manisha9'");
-    $seventhLogin = mysqli_fetch_assoc($result);
-    if ($_SESSION['SESS_FIRST_NAME'] == 'manisha9' && $_SESSION['SESS_LAST_NAME'] == $seventhLogin['password'])
+    $ninthLogin = mysqli_fetch_assoc($result);
+    if ($_SESSION['SESS_FIRST_NAME'] == 'manisha9' && $_SESSION['SESS_LAST_NAME'] == $ninthLogin['password'])
         $nineaccess = 1;
 
     $result = mysqli_query($conn,"SELECT password FROM member WHERE username = 'manisha10'");
-    $seventhLogin = mysqli_fetch_assoc($result);
-    if ($_SESSION['SESS_FIRST_NAME'] == 'manisha10' && $_SESSION['SESS_LAST_NAME'] == $seventhLogin['password'])
+    $tenthLogin = mysqli_fetch_assoc($result);
+    if ($_SESSION['SESS_FIRST_NAME'] == 'manisha10' && $_SESSION['SESS_LAST_NAME'] == $tenthLogin['password'])
         $tenaccess = 1;
 
     $result = mysqli_query($conn,"SELECT password FROM member WHERE username = 'manisha11'");
-    $seventhLogin = mysqli_fetch_assoc($result);
-    if ($_SESSION['SESS_FIRST_NAME'] == 'manisha11' && $_SESSION['SESS_LAST_NAME'] == $seventhLogin['password'])
+    $eleventhLogin = mysqli_fetch_assoc($result);
+    if ($_SESSION['SESS_FIRST_NAME'] == 'manisha11' && $_SESSION['SESS_LAST_NAME'] == $eleventhLogin['password'])
         $elevenaccess = 1;
 
     $result = mysqli_query($conn,"SELECT password FROM member WHERE username = 'manisha12'");
-    $seventhLogin = mysqli_fetch_assoc($result);
-    if ($_SESSION['SESS_FIRST_NAME'] == 'manisha12' && $_SESSION['SESS_LAST_NAME'] == $seventhLogin['password'])
+    $twelfthLogin = mysqli_fetch_assoc($result);
+    if ($_SESSION['SESS_FIRST_NAME'] == 'manisha12' && $_SESSION['SESS_LAST_NAME'] == $twelfthLogin['password'])
         $twelveaccess = 1;
+
+    $result = mysqli_query($conn,"SELECT password FROM member WHERE username = 'manisha12_hsc'");
+    $hsc_twelfthLogin = mysqli_fetch_assoc($result);
+    if ($_SESSION['SESS_FIRST_NAME'] == 'manisha12_hsc' && $_SESSION['SESS_LAST_NAME'] == $hsc_twelfthLogin['password'])
+        $hsc_twelveaccess = 1;
 ?>
 <!DOCTYPE html>
 <html>
@@ -108,6 +130,156 @@
   <main class="hoc container clear"> 
     
     <div class="together">
+      
+
+      <div>
+        <div id="three">
+          <h3>3rd</h3>
+        </div>
+        <div id="pg3">  
+          <table style="width:100%">
+            <tr>
+              <th id="dhano">UPLOADS</th>
+              <th id="dhano">DATE</th>
+              <?php
+                if (isset($_SESSION['SESS_FIRST_NAME']))
+                  if($_SESSION['SESS_FIRST_NAME']=="manishamom")
+                    echo '<th id="dhano">Cancel</th>';
+              ?>
+            </tr>
+
+            <?php    
+              $result1 = mysqli_query($conn,"SELECT * FROM upload WHERE third IS NOT NULL ORDER BY date DESC");
+              $dir = 'third/';
+              while($row = mysqli_fetch_assoc($result1)) {
+                $date = strtotime($row['date']);
+                echo '<tr>
+                      <td><a href="'.$dir.$row['third'].'" download>'.$row['third'].'</a></td>
+                      <td>'.date("j F Y", $date).'</td>';
+                      if($_SESSION['SESS_FIRST_NAME']=="manishamom")
+                        echo '<td><a href="deleteRow.php?id='.$row['id'].'&filePath='.$dir.$row['third'].'">Click to Delete Row</a></td>';
+                    echo '</tr>';
+              }
+            ?>
+          </table>             
+        </div>
+
+        <?php
+          if (isset($_SESSION['SESS_FIRST_NAME'])) 
+          {
+            if($_SESSION['SESS_FIRST_NAME']=="manishamom") 
+            {
+                echo '<form action="upload.php" method="post" enctype="multipart/form-data">';
+                echo '<input type="file" name="userfile" />';
+                echo '<input type="hidden" name="dir" value="third" />';
+                echo '<input type="submit" name="submit" />';
+                echo '</form>';
+                echo '<a href="manageRegister.php?std=3">Registered Students</a><br>';
+                echo '<a href="changePass.php?std=3">Change Password</a>';
+            }
+          }
+        ?>
+      </div>
+
+      <div>
+        <div id="four">
+          <h3>4th</h3>
+        </div>
+        <div id="pg4">  
+          <table style="width:100%">
+            <tr>
+              <th id="dhano">UPLOADS</th>
+              <th id="dhano">DATE</th>
+              <?php
+                if (isset($_SESSION['SESS_FIRST_NAME']))
+                  if($_SESSION['SESS_FIRST_NAME']=="manishamom")
+                    echo '<th id="dhano">Cancel</th>';
+              ?>
+            </tr>
+
+            <?php    
+              $result1 = mysqli_query($conn,"SELECT * FROM upload WHERE fourth IS NOT NULL ORDER BY date DESC");
+              $dir = 'fourth/';
+              while($row = mysqli_fetch_assoc($result1)) {
+                $date = strtotime($row['date']);
+                echo '<tr>
+                      <td><a href="'.$dir.$row['fourth'].'" download>'.$row['fourth'].'</a></td>
+                      <td>'.date("j F Y", $date).'</td>';
+                      if($_SESSION['SESS_FIRST_NAME']=="manishamom")
+                        echo '<td><a href="deleteRow.php?id='.$row['id'].'&filePath='.$dir.$row['fourth'].'">Click to Delete Row</a></td>';
+                    echo '</tr>';
+              }
+            ?>
+          </table>             
+        </div>
+
+        <?php
+          if (isset($_SESSION['SESS_FIRST_NAME'])) 
+          {
+            if($_SESSION['SESS_FIRST_NAME']=="manishamom") 
+            {
+                echo '<form action="upload.php" method="post" enctype="multipart/form-data">';
+                echo '<input type="file" name="userfile" />';
+                echo '<input type="hidden" name="dir" value="fourth" />';
+                echo '<input type="submit" name="submit" />';
+                echo '</form>';
+                echo '<a href="manageRegister.php?std=4">Registered Students</a><br>';
+                echo '<a href="changePass.php?std=4">Change Password</a>';
+            }
+          }
+        ?>
+      </div>
+
+      <div>
+        <div id="five">
+          <h3>5th</h3>
+        </div>
+        <div id="pg5">  
+          <table style="width:100%">
+            <tr>
+              <th id="dhano">UPLOADS</th>
+              <th id="dhano">DATE</th>
+              <?php
+                if (isset($_SESSION['SESS_FIRST_NAME']))
+                  if($_SESSION['SESS_FIRST_NAME']=="manishamom")
+                    echo '<th id="dhano">Cancel</th>';
+              ?>
+            </tr>
+
+            <?php    
+              $result1 = mysqli_query($conn,"SELECT * FROM upload WHERE fifth IS NOT NULL ORDER BY date DESC");
+              $dir = 'fifth/';
+              while($row = mysqli_fetch_assoc($result1)) {
+                $date = strtotime($row['date']);
+                echo '<tr>
+                      <td><a href="'.$dir.$row['fifth'].'" download>'.$row['fifth'].'</a></td>
+                      <td>'.date("j F Y", $date).'</td>';
+                      if($_SESSION['SESS_FIRST_NAME']=="manishamom")
+                        echo '<td><a href="deleteRow.php?id='.$row['id'].'&filePath='.$dir.$row['fifth'].'">Click to Delete Row</a></td>';
+                    echo '</tr>';
+              }
+            ?>
+          </table>             
+        </div>
+
+        <?php
+          if (isset($_SESSION['SESS_FIRST_NAME'])) 
+          {
+            if($_SESSION['SESS_FIRST_NAME']=="manishamom") 
+            {
+                echo '<form action="upload.php" method="post" enctype="multipart/form-data">';
+                echo '<input type="file" name="userfile" />';
+                echo '<input type="hidden" name="dir" value="fifth" />';
+                echo '<input type="submit" name="submit" />';
+                echo '</form>';
+                echo '<a href="manageRegister.php?std=5">Registered Students</a><br>';
+                echo '<a href="changePass.php?std=5">Change Password</a>';
+            }
+          }
+        ?>
+      </div>
+
+
       <div id="big six">
         <div id="six">
           <h3>6th</h3>
@@ -125,7 +297,7 @@
             </tr>
 
             <?php    
-              $result1 = mysqli_query($conn,"SELECT * FROM upload WHERE sixth IS NOT NULL");
+              $result1 = mysqli_query($conn,"SELECT * FROM upload WHERE sixth IS NOT NULL ORDER BY date DESC");
               $dir = 'sixth/';
               while($row = mysqli_fetch_assoc($result1)) {
                 $date = strtotime($row['date']);
@@ -133,7 +305,7 @@
                       <td><a href="'.$dir.$row['sixth'].'" download>'.$row['sixth'].'</a></td>
                       <td>'.date("j F Y", $date).'</td>';
                       if($_SESSION['SESS_FIRST_NAME']=="manishamom")
-                        echo '<td><a href="deleteRow.php?id='.$row['id'].'">Click to Delete Row</a></td>';
+                        echo '<td><a href="deleteRow.php?id='.$row['id'].'&filePath='.$dir.$row['sixth'].'">Click to Delete Row</a></td>';
                     echo '</tr>';
               }
             ?>
@@ -175,7 +347,7 @@
             </tr>
 
             <?php    
-              $result1 = mysqli_query($conn,"SELECT * FROM upload WHERE seventh IS NOT NULL");
+              $result1 = mysqli_query($conn,"SELECT * FROM upload WHERE seventh IS NOT NULL ORDER BY date DESC");
               $dir = 'seventh/';
               while($row = mysqli_fetch_assoc($result1)) {
                 $date = strtotime($row['date']);
@@ -183,7 +355,7 @@
                       <td><a href="'.$dir.$row['seventh'].'" download>'.$row['seventh'].'</a></td>
                       <td>'.date("j F Y", $date).'</td>';
                       if($_SESSION['SESS_FIRST_NAME']=="manishamom")
-                        echo '<td><a href="deleteRow.php?id='.$row['id'].'">Click to Delete Row</a></td>';
+                        echo '<td><a href="deleteRow.php?id='.$row['id'].'&filePath='.$dir.$row['seventh'].'">Click to Delete Row</a></td>';
                     echo '</tr>';
               }
             ?>
@@ -225,7 +397,7 @@
             </tr>
 
             <?php    
-              $result1 = mysqli_query($conn,"SELECT * FROM upload WHERE eighth IS NOT NULL");
+              $result1 = mysqli_query($conn,"SELECT * FROM upload WHERE eighth IS NOT NULL ORDER BY date DESC");
               $dir = 'eighth/';
               while($row = mysqli_fetch_assoc($result1)) {
                 $date = strtotime($row['date']);
@@ -233,7 +405,7 @@
                       <td><a href="'.$dir.$row['eighth'].'" download>'.$row['eighth'].'</a></td>
                       <td>'.date("j F Y", $date).'</td>';
                       if($_SESSION['SESS_FIRST_NAME']=="manishamom")
-                        echo '<td><a href="deleteRow.php?id='.$row['id'].'">Click to Delete Row</a></td>';
+                        echo '<td><a href="deleteRow.php?id='.$row['id'].'&filePath='.$dir.$row['eighth'].'">Click to Delete Row</a></td>';
                     echo '</tr>';
               }
             ?>
@@ -275,7 +447,7 @@
             </tr>
 
             <?php    
-              $result1 = mysqli_query($conn,"SELECT * FROM upload WHERE ninth IS NOT NULL");
+              $result1 = mysqli_query($conn,"SELECT * FROM upload WHERE ninth IS NOT NULL ORDER BY date DESC");
               $dir = 'ninth/';
               while($row = mysqli_fetch_assoc($result1)) {
                 $date = strtotime($row['date']);
@@ -283,7 +455,7 @@
                       <td><a href="'.$dir.$row['ninth'].'" download>'.$row['ninth'].'</a></td>
                       <td>'.date("j F Y", $date).'</td>';
                       if($_SESSION['SESS_FIRST_NAME']=="manishamom")
-                        echo '<td><a href="deleteRow.php?id='.$row['id'].'">Click to Delete Row</a></td>';
+                        echo '<td><a href="deleteRow.php?id='.$row['id'].'&filePath='.$dir.$row['ninth'].'">Click to Delete Row</a></td>';
                     echo '</tr>';
               }
             ?>
@@ -325,7 +497,7 @@
             </tr>
 
             <?php    
-              $result1 = mysqli_query($conn,"SELECT * FROM upload WHERE tenth IS NOT NULL");
+              $result1 = mysqli_query($conn,"SELECT * FROM upload WHERE tenth IS NOT NULL ORDER BY date DESC");
               $dir = 'tenth/';
               while($row = mysqli_fetch_assoc($result1)) {
                 $date = strtotime($row['date']);
@@ -333,7 +505,7 @@
                       <td><a href="'.$dir.$row['tenth'].'" download>'.$row['tenth'].'</a></td>
                       <td>'.date("j F Y", $date).'</td>';
                       if($_SESSION['SESS_FIRST_NAME']=="manishamom")
-                        echo '<td><a href="deleteRow.php?id='.$row['id'].'">Click to Delete Row</a></td>';
+                        echo '<td><a href="deleteRow.php?id='.$row['id'].'&filePath='.$dir.$row['tenth'].'">Click to Delete Row</a></td>';
                     echo '</tr>';
               }
             ?>
@@ -375,7 +547,7 @@
             </tr>
 
             <?php    
-              $result1 = mysqli_query($conn,"SELECT * FROM upload WHERE eleventh IS NOT NULL");
+              $result1 = mysqli_query($conn,"SELECT * FROM upload WHERE eleventh IS NOT NULL ORDER BY date DESC");
               $dir = 'eleventh/';
               while($row = mysqli_fetch_assoc($result1)) {
                 $date = strtotime($row['date']);
@@ -383,7 +555,7 @@
                       <td><a href="'.$dir.$row['eleventh'].'" download>'.$row['eleventh'].'</a></td>
                       <td>'.date("j F Y", $date).'</td>';
                       if($_SESSION['SESS_FIRST_NAME']=="manishamom")
-                        echo '<td><a href="deleteRow.php?id='.$row['id'].'">Click to Delete Row</a></td>';
+                        echo '<td><a href="deleteRow.php?id='.$row['id'].'&filePath='.$dir.$row['eleventh'].'">Click to Delete Row</a></td>';
                     echo '</tr>';
               }
             ?>
@@ -424,7 +596,7 @@
             </tr>
 
             <?php    
-              $result1 = mysqli_query($conn,"SELECT * FROM upload WHERE twelfth IS NOT NULL");
+              $result1 = mysqli_query($conn,"SELECT * FROM upload WHERE twelfth IS NOT NULL ORDER BY date DESC");
               $dir = 'twelfth/';
               while($row = mysqli_fetch_assoc($result1)) {
                 $date = strtotime($row['date']);
@@ -432,7 +604,7 @@
                       <td><a href="'.$dir.$row['twelfth'].'" download>'.$row['twelfth'].'</a></td>
                       <td>'.date("j F Y", $date).'</td>';
                       if($_SESSION['SESS_FIRST_NAME']=="manishamom")
-                        echo '<td><a href="deleteRow.php?id='.$row['id'].'">Click to Delete Row</a></td>';
+                        echo '<td><a href="deleteRow.php?id='.$row['id'].'&filePath='.$dir.$row['twelfth'].'">Click to Delete Row</a></td>';
                     echo '</tr>';
               }
             ?>
@@ -455,6 +627,56 @@
           }
         ?>
       </div>
+
+      <div id="big hsc twelve">
+        <div id="hsc_twelve">
+          <h3>12th HSC</h3>
+        </div>
+        <div id="pg12HSC">  
+          <table style="width:100%">
+            <tr>
+              <th id="dhano">UPLOADS</th>
+              <th id="dhano">DATE</th>
+              <?php
+                if (isset($_SESSION['SESS_FIRST_NAME']))
+                  if($_SESSION['SESS_FIRST_NAME']=="manishamom")
+                    echo '<th id="dhano">Cancel</th>';
+              ?>
+            </tr>
+
+            <?php    
+              $result1 = mysqli_query($conn,"SELECT * FROM upload WHERE hsc_twelfth IS NOT NULL ORDER BY date DESC");
+              $dir = 'hsc_twelfth/';
+              while($row = mysqli_fetch_assoc($result1)) {
+                $date = strtotime($row['date']);
+                echo '<tr>
+                      <td><a href="'.$dir.$row['hsc_twelfth'].'" download>'.$row['hsc_twelfth'].'</a></td>
+                      <td>'.date("j F Y", $date).'</td>';
+                      if($_SESSION['SESS_FIRST_NAME']=="manishamom")
+                        echo '<td><a href="deleteRow.php?id='.$row['id'].'&filePath='.$dir.$row['hsc_twelfth'].'">Click to Delete Row</a></td>';
+                    echo '</tr>';
+              }
+            ?>
+          </table>             
+        </div>
+
+        <?php
+          if (isset($_SESSION['SESS_FIRST_NAME'])) 
+          {
+            if($_SESSION['SESS_FIRST_NAME']=="manishamom") 
+            {
+              echo '<form action="upload.php" method="post" enctype="multipart/form-data">';
+              echo '<input type="file" name="userfile" />';
+              echo '<input type="hidden" name="dir" value="hsc_twelfth" />';
+              echo '<input type="submit" name="submit" />';
+              echo '</form>';
+              echo '<a href="manageRegister.php?std=12_hsc">Registered Students</a><br>';
+                echo '<a href="changePass.php?std=12_hsc">Change Password</a>';
+            }
+          }
+        ?>
+      </div>
+
   </main>
 </div>
 
@@ -505,6 +727,76 @@
   <script src="../layout/scripts/jquery.backtotop.js"></script>
   <script src="../layout/scripts/jquery.mobilemenu.js"></script>
   <script src="../layout/scripts/jquery.tocontactus.js"></script>
+
+  <script>
+    function toggleDown3() {
+      $( "#four" ).animate({
+      marginTop: "+=100px"},
+      function(){$('#pg3').slideDown("fast");
+      });
+    }
+      
+    function toggleUp3() {
+      $( "#four" ).animate({
+      marginTop: "-=100px"},
+      function(){$('#pg3').hide();
+      });
+    }
+
+    var toggle3 = [toggleDown3, toggleUp3];
+    $("#three").click(function() {
+      var access = <?php echo $threeaccess; ?> ;
+      if (access == 1)
+        toggle3.reverse()[1]();
+    });
+  </script>
+
+  <script>
+    function toggleDown4() {
+      $( "#five" ).animate({
+      marginTop: "+=100px"},
+      function(){$('#pg4').slideDown("fast");
+      });
+    }
+      
+    function toggleUp4() {
+      $( "#five" ).animate({
+      marginTop: "-=100px"},
+      function(){$('#pg4').hide();
+      });
+    }
+
+    var toggle4 = [toggleDown4, toggleUp4];
+    $("#four").click(function() {
+      var access = <?php echo $fouraccess; ?> ;
+      if (access == 1)
+        toggle4.reverse()[1]();
+    });
+  </script>
+
+  <script>
+    function toggleDown5() {
+      $( "#six" ).animate({
+      marginTop: "+=100px"},
+      function(){$('#pg5').slideDown("fast");
+      });
+    }
+      
+    function toggleUp5() {
+      $( "#six" ).animate({
+      marginTop: "-=100px"},
+      function(){$('#pg5').hide();
+      });
+    }
+
+    var toggle5 = [toggleDown5, toggleUp5];
+    $("#five").click(function() {
+      var access = <?php echo $fiveaccess; ?> ;
+      if (access == 1)
+        toggle5.reverse()[1]();
+    });
+  </script>
+
   <script>
 
     function a() {
@@ -657,17 +949,42 @@
 
   <script>
 
+      function hsc_twelveDown() {
+        $( "#hsc_twelve" ).animate({
+        marginTop: "+=100px"},
+        function(){$('#pg12').slideDown("fast");
+        });
+      }
+
+      function hsc_twelveUp() {
+        $( "#hsc_twelve" ).animate({
+        marginTop: "-=100px"},
+        function(){$('#pg12').hide();
+        });
+      }
+
+      var fortwelve = [hsc_twelveDown,hsc_twelveUp];
+      $("#twelve").click(function() { 
+        var access = <?php echo $twelveaccess; ?> ;
+        if (access == 1)
+          fortwelve.reverse()[1]();
+      });
+
+  </script>
+
+  <script>
+
       function abb() {
-        $('#pg12').slideDown("fast");
+        $('#pg12HSC').slideDown("fast");
       }
 
       function bbb() {
-        $('#pg12').hide();
+        $('#pg12HSC').hide();
       }
 
       var abb = [abb,bbb];
-      $("#twelve").click(function() { 
-        var access = <?php echo $twelveaccess; ?> ;
+      $("#hsc_twelve").click(function() { 
+        var access = <?php echo $hsc_twelveaccess; ?> ;
         if (access == 1)
          abb.reverse()[1]();
       });
