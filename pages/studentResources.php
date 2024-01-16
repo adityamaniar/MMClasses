@@ -4,7 +4,8 @@
     require("auth.php");
 
     function fetchDataFromDatabase() {
-        $result = mysqli_query($conn, "SELECT * FROM student_resource WHERE standard = $_SESSION['SESS_STANDARD'] ORDER BY date DESC");
+        $standard = $_SESSION['SESS_STANDARD'];
+        $result = mysqli_query($conn, "SELECT * FROM student_resource WHERE standard = $standard ORDER BY date DESC");
         $data = array();
         while($row = mysqli_fetch_assoc($result)) {
             $data[] = $row;
@@ -64,7 +65,7 @@
                     $dirName = $_SESSION['SESS_STANDARD'];
                     foreach ($dataRows as $row) {
                         echo "<tr>";
-                        echo "<td class='fixed-column'><a href='" . $dirName.$row['data'] . "' download>" . $row['data'] . "</a></td>"
+                        echo "<td class='fixed-column'><a href='" . $dirName.$row['data'] . "' download>" . $row['data'] . "</a></td>";
                         echo "<td class='fixed-column'>" . date('Y-m-d', strtotime($row['date'])) . "</td>";
                         echo "</tr>";
                     }

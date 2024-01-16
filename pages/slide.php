@@ -131,11 +131,6 @@
     
     <div class="together">
 
-        <?php
-            if (isset($_SESSION['SESS_STANDARD'])) {
-                require("studentResources.php");
-            }
-        ?>
 
       <div>
         <div id="three">
