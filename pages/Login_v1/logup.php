@@ -44,6 +44,7 @@
 			session_regenerate_id();
 			$member = mysqli_fetch_assoc($result);
 			$_SESSION['SESS_MEMBER_ID'] = $member['mem_id'];
+			$_SESSION['SESS_STANDARD'] = $member['standard'];
 			$_SESSION['SESS_FIRST_NAME'] = $member['username'];
 			$_SESSION['SESS_LAST_NAME'] = $member['password'];
 

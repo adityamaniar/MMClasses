@@ -122,7 +122,7 @@
           <p class="btmspace-50"></p>
           <a><i class="icon fa fa-odnoklassniki"></i></a>
             <h6 class="heading font-x1">Love Children </h6>
-            <p>I have been in this profession for the past 8 years. My affection with children is unparalleled.</p>
+            <p>I have been in this profession for the past 15 years. My affection with children is unparalleled.</p>
           
           <a><i class="icon fa fa-object-ungroup"></i></a>
             <h6 class="heading font-x1">A 100% Dedication</h6>
@@ -166,7 +166,7 @@
       <ul class="nospace linklist contact">
         <li><i class="fa fa-map-marker"></i>
           <address>
-          502, Diwani Mahal, Gulmohar Road No. 1, Juhu Scheme, Opposite Irla Masjid
+              702, Parkland (Rajit Apartment), Gulmohar Cross Road No. 10, Juhu Scheme
           </address>
         </li>
         <li><i class="fa fa-phone"></i> +91 9820682840  </li>

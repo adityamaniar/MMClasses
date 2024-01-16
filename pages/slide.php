@@ -82,7 +82,7 @@
       <div class="fl_left">
         <ul>
           <li><i class="fa fa-phone"></i> +91 9820682840</li>
-          <li><i class="fa fa-envelope-o"></i> manishavmaniar@hotmail.com</li>
+          <li><i class="fa fa-envelope-o"></i> manishavmaniar@gmail.com</li>
         </ul>
       </div>
       <div class="fl_right">
@@ -130,7 +130,7 @@
   <main class="hoc container clear"> 
     
     <div class="together">
-      
+
 
       <div>
         <div id="three">
@@ -692,11 +692,11 @@
       <ul class="nospace linklist contact">
         <li><i class="fa fa-map-marker"></i>
           <address>
-          502, Diwani Mahal, Gulmohar Road No. 1, Juhu Scheme, Opposite Irla Masjid
+            702, Parkland (Rajit Apartment), Gulmohar Cross Road No. 10, Juhu Scheme
           </address>
         </li>
         <li><i class="fa fa-phone"></i> +91 9820682840  </li>
-        <li><i class="fa fa-envelope-o"></i> manishavmaniar@hotmail.com</li>
+        <li><i class="fa fa-envelope-o"></i> manishavmaniar@gmail.com</li>
       </ul>
     </div>
     <div class="one_third">
@@ -705,8 +705,6 @@
         <li>
           <article>
             <p class="nospace">Garage No 1, Classique bldg, Gulmohar Road, Near Juhu Galli signal</p><br>
-            <time class="font-xs block btmspace-10">Monday, Wednesday, Friday, 4pm-8pm</time>
-            <time class="font-xs block btmspace-10">Tuesday, Thursday, 4pm-6pm</time>
           </article>
         </li>
       </ul>
@@ -722,6 +720,7 @@
 
     
     <a id="backtotop" href="#top"><i class="fa fa-chevron-up"></i></a>
+
 <!-- JAVASCRIPTS -->
   <script src="../layout/scripts/jquery.min.js"></script>
   <script src="../layout/scripts/jquery.backtotop.js"></script>
