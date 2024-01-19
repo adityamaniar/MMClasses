@@ -1,17 +1,18 @@
 <?php
     session_start();
     require("connection.php");
-    require("auth.php");
 
     function fetchDataFromDatabase() {
+        require("connection.php");
+
         $standard = $_SESSION['SESS_STANDARD'];
-        $result = mysqli_query($conn, "SELECT * FROM student_resource WHERE standard = $standard ORDER BY date DESC");
+        $result = mysqli_query($conn, "SELECT * FROM student_resource WHERE standard = '$standard' ORDER BY date DESC");
         $data = array();
         while($row = mysqli_fetch_assoc($result)) {
             $data[] = $row;
         }
         mysqli_free_result($result);
-        mysqli_close($con);
+        mysqli_close($conn);
         return $data;
     }
 ?>
@@ -35,14 +36,9 @@
             text-align: left;
         }
 
-        th {
-            background-color: #f2f2f2;
-        }
-
         .fixed-column {
             position: sticky;
             left: 0;
-            background-color: #f2f2f2;
         }
 
         .scrollable {
@@ -62,10 +58,10 @@
             <tbody>
                 <?php
                     $dataRows = fetchDataFromDatabase();
-                    $dirName = $_SESSION['SESS_STANDARD'];
+                    $dirName = $_SESSION['SESS_STANDARD'] . "/";
                     foreach ($dataRows as $row) {
                         echo "<tr>";
-                        echo "<td class='fixed-column'><a href='" . $dirName.$row['data'] . "' download>" . $row['data'] . "</a></td>";
+                        echo "<td class='fixed-column'><a href='" . $dirName.$row['filename'] . "' download>" . $row['filename'] . "</a></td>";
                         echo "<td class='fixed-column'>" . date('Y-m-d', strtotime($row['date'])) . "</td>";
                         echo "</tr>";
                     }

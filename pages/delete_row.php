@@ -4,11 +4,11 @@
 	
 	require_once('connection.php');
 
-	$sql = "DELETE FROM upload WHERE id = $id";
+	$sql = "DELETE FROM student_resource WHERE id = $id";
 	unlink($filePath);
 
 	if (mysqli_query($conn, $sql)) {
-	    header('Location: slide.php');
+	    header('Location: resources.php');
 	    exit;
 	} else {
 	    echo "Error deleting record";

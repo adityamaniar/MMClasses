@@ -28,11 +28,11 @@
                             if (isset($_SESSION['SESS_FIRST_NAME'])) {
                               echo '<li style="font-size: 12px;">';
                               echo $_SESSION['SESS_FIRST_NAME'];
-                              echo '</li> <li style="font-size: 12px;"><a href="pages/slide.php">My Resources</a></li>';
+                              echo '</li> <li style="font-size: 12px;"><a href="pages/resources.php">My Resources</a></li>';
                               echo '</li> <li style="font-size: 12px;"><a href="pages/logout.php">Logout</a></li>';
                             }
                             else {
-                              echo '<li style="font-size: 12px;"><a href="pages/Login_v1/login.php">Login</a></li>';
+                              echo '<li style="font-size: 12px;"><a href="pages/login/login.php">Login</a></li>';
                             }
                           ?>
                     </ul>

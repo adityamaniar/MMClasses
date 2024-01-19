@@ -49,7 +49,7 @@
 			$_SESSION['SESS_LAST_NAME'] = $member['password'];
 
 			session_write_close();
-			header("location: ../slide.php");
+			header("location: ../resources.php");
 			exit();
 		} else {
 			//Login failed
