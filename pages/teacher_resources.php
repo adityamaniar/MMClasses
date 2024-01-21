@@ -102,9 +102,10 @@
             echo '</div>';
 
             echo '<form action="upload.php" method="post" enctype="multipart/form-data">';
-            echo '<input type="file" name="file" />';
+            echo '<label for="file" multiple>Select files to upload:</label>';
+            echo '<input type="file" name="files[]" id="file" multiple/>';
             echo '<input type="hidden" name="dir" value="' . $standard . '" />';
-            echo '<input type="submit" name="submit" />';
+            echo '<input type="submit" value="Upload" name="submit" />';
             echo '</form>';
             echo '<a href="manageRegister.php?std=3">Manage Registrations</a><br>';
             echo '<a href="change_password.php?standard=' . $standard . '">Change Password</a>';
