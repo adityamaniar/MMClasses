@@ -20,8 +20,6 @@
                 $result = mysqli_query($conn, $qry);
                 if ($result) {
                     echo "File uploaded into the table successfully!";
-                    header("location: resources.php");
-                    exit();
                 } else {
                     echo "Error: " . $qry . "<br>" . mysqli_error($conn);
                 }
@@ -30,5 +28,6 @@
             }
 	    }
 	}
+    header("location: resources.php");
     mysqli_close($conn);
 ?>
