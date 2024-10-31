@@ -71,7 +71,7 @@
             echo '<tbody>';
 
             // SQL query to retrieve data (filename and date) from student_resource for the current standard
-            $resourceQuery = "SELECT filename, date, id FROM student_resource WHERE standard = '$standard'";
+            $resourceQuery = "SELECT filename, date, id FROM student_resource WHERE standard = '$standard' ORDER BY date DESC";
             $resourceResult = $conn->query($resourceQuery);
 
             // Check if the query was successful

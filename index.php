@@ -58,8 +58,8 @@
         </div>
 
         <div class="slider" id = "slider1">
-            <div style="background-image:url(images/topperList2023.jpeg)"></div>
-            <div style="background-image:url(images/toppers2023.jpeg)"></div>
+            <div style="background-image:url(images/topper_2024.jpeg)"></div>
+            <div style="background-image:url(images/topper_2024_2.jpeg)"></div>
             <div style="background-image:url(images/GandhiSikshanBhavan.jpg)"></div>
 
             <i class="left" class="arrows" style="z-index:2; position:absolute;"><svg viewBox="0 0 100 100"><path d="M 10,50 L 60,100 L 70,90 L 30,50  L 70,10 L 60,0 Z"></path></svg></i>
