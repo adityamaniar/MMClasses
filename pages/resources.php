@@ -58,7 +58,7 @@
       <nav id="mainav" class="fl_right">
         <ul class="clear">
           <li><a href="../index.php">Home</a></li>
-          <li><a id="tocontactus" href="#contact_us">Contact Me At</a></li>
+          <li><a id="tocontactus" href="#contact_us">Contact Me</a></li>
         </ul>
       </nav>
     </header>

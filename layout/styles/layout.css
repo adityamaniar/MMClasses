@@ -267,6 +267,22 @@ body {
 #comments div{margin-bottom:15px;}
 #comments input[type="submit"], #comments input[type="reset"]{display:inline-block; width:auto; min-width:150px; margin:0; padding:8px 5px; cursor:pointer;}
 
+/* Testimonials */
+.testimonial_row {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+}
+.testimonial {
+    flex: 1;
+    text-align: center;
+}
+.subheading {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #333;
+}
+
 /* Sidebar */
 .container .sidebar{}
 
