@@ -55,6 +55,7 @@
             </header>
         </div>
         <div class="slider" id = "slider1">
+            <div style="background-image:url(images/Toppers-2021-23.jpeg)"></div>
             <div style="background-image:url(images/topper_2024.jpeg)"></div>
             <div style="background-image:url(images/topper_2024_2.jpeg)"></div>
             <div style="background-image:url(images/GandhiSikshanBhavan.jpg)"></div>
