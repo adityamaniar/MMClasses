@@ -38,7 +38,7 @@
         <ul>
           <li><a href=""><i class="fa fa-lg fa-home"></i></a></li>
             <?php
-              if ($_SESSION['SESS_FIRST_NAME']=='manishamom') {
+              if ($_SESSION['SESS_FIRST_NAME']=='admin') {
                 echo '<li style="font-size: 12px;">';
                 echo $_SESSION['SESS_FIRST_NAME'];
               } else {

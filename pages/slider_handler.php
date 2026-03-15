@@ -1,8 +1,8 @@
 <?php
 session_start();
 
-// Security check - only allow manishamom
-if (!isset($_SESSION['SESS_FIRST_NAME']) || $_SESSION['SESS_FIRST_NAME'] != 'manishamom') {
+// Security check - only allow admin
+if (!isset($_SESSION['SESS_FIRST_NAME']) || $_SESSION['SESS_FIRST_NAME'] != 'admin') {
     header('Location: ../index.php');
     exit();
 }
