@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <?php
     session_start();
+    require('pages/connection.php');
 ?>
 <html lang="en">
 <head>
@@ -14,6 +15,16 @@
     <link href="layout/styles/layout.css" rel="stylesheet" type="text/css" media="all">
 </head>
 <body id="top">
+    <?php if (isset($_GET['success'])): ?>
+        <div style="background: #d4edda; color: #155724; padding: 10px; text-align: center; position: fixed; top: 0; left: 0; right: 0; z-index: 9999;">
+            <?php echo htmlspecialchars($_GET['success'], ENT_QUOTES, 'UTF-8'); ?>
+        </div>
+    <?php endif; ?>
+    <?php if (isset($_GET['error'])): ?>
+        <div style="background: #f8d7da; color: #721c24; padding: 10px; text-align: center; position: fixed; top: 0; left: 0; right: 0; z-index: 9999;">
+            <?php echo htmlspecialchars($_GET['error'], ENT_QUOTES, 'UTF-8'); ?>
+        </div>
+    <?php endif; ?>
     <div class="bgded overlay">
         <div class="wrapper row0">
             <div id="topbar" class="hoc clear">
@@ -51,15 +62,51 @@
             </header>
         </div>
         <div class="slider" id="slider1">
-            <div style="background-image:url(images/air-result.jpeg)"></div>
-            <div style="background-image:url(images/score-100.jpeg)"></div>
-            <div style="background-image:url(images/score-99.jpeg)"></div>
-            <div style="background-image:url(images/score-95.jpeg)"></div>
-            <div style="background-image:url(images/GandhiSikshanBhavan.jpg)"></div>
+            <?php
+            $sliderResult = mysqli_query($conn, "SELECT * FROM slider_images ORDER BY display_order ASC");
+            while ($row = mysqli_fetch_assoc($sliderResult)) {
+                echo '<div style="background-image:url(images/' . htmlspecialchars($row['filename'], ENT_QUOTES, 'UTF-8') . ')"></div>';
+            }
+            ?>
 
             <i class="left arrows" style="z-index:2; position:absolute;"><svg viewBox="0 0 100 100"><path d="M 10,50 L 60,100 L 70,90 L 30,50  L 70,10 L 60,0 Z"></path></svg></i>
             <i class="right arrows" style="z-index:2; position:absolute;"><svg viewBox="0 0 100 100"><path d="M 10,50 L 60,100 L 70,90 L 30,50  L 70,10 L 60,0 Z" transform="translate(100, 100) rotate(180) "></path></svg></i>
         </div>
+
+        <?php if (isset($_SESSION['SESS_FIRST_NAME']) && $_SESSION['SESS_FIRST_NAME'] == 'manishamom'): ?>
+        <!-- Admin Slider Management -->
+        <div class="wrapper row1" style="background: #f9f9f9; padding: 20px 0;">
+            <div class="hoc container clear">
+                <h4 style="margin-bottom: 15px;">Slider Management (Admin)</h4>
+                <div style="display: flex; flex-wrap: wrap; gap: 15px; align-items: flex-start;">
+                    <!-- Upload Form -->
+                    <div style="background: #fff; padding: 15px; border: 1px solid #ddd; border-radius: 5px;">
+                        <form action="pages/slider_handler.php" method="post" enctype="multipart/form-data" style="display: flex; gap: 10px; align-items: center;">
+                            <input type="file" name="slider_image" accept="image/jpeg,image/png,image/gif,image/webp" required style="padding: 5px;">
+                            <button type="submit" name="upload" style="padding: 8px 16px; background: #28a745; color: #fff; border: none; border-radius: 4px; cursor: pointer;">Upload Image</button>
+                        </form>
+                    </div>
+
+                    <!-- Image List with Delete Options -->
+                    <div style="display: flex; flex-wrap: wrap; gap: 10px;">
+                        <?php
+                        mysqli_data_seek($sliderResult, 0);
+                        while ($row = mysqli_fetch_assoc($sliderResult)): ?>
+                            <div style="background: #fff; padding: 10px; border: 1px solid #ddd; border-radius: 5px; text-align: center;">
+                                <img src="images/<?php echo htmlspecialchars($row['filename'], ENT_QUOTES, 'UTF-8'); ?>" alt="Slider" style="width: 80px; height: 50px; object-fit: cover; border-radius: 3px; display: block; margin-bottom: 5px;">
+                                <small style="display: block; margin-bottom: 5px; word-break: break-all; max-width: 80px;"><?php echo htmlspecialchars($row['filename'], ENT_QUOTES, 'UTF-8'); ?></small>
+                                <form action="pages/slider_handler.php" method="post" onsubmit="return confirm('Delete this image?');">
+                                    <input type="hidden" name="image_id" value="<?php echo $row['id']; ?>">
+                                    <input type="hidden" name="filename" value="<?php echo htmlspecialchars($row['filename'], ENT_QUOTES, 'UTF-8'); ?>">
+                                    <button type="submit" name="delete" style="padding: 4px 8px; background: #dc3545; color: #fff; border: none; border-radius: 3px; cursor: pointer; font-size: 12px;">Delete</button>
+                                </form>
+                            </div>
+                        <?php endwhile; ?>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <?php endif; ?>
     </div>
 
     <div class="wrapper row3">
